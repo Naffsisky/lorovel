@@ -1,0 +1,61 @@
+/* todolist.css */
+
+.list-group li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.list-group li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.list-group li span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.list-group li button {
+    margin-left: 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* todolist.css */
+
+.list-group li input[type="checkbox"] {
+    margin-right: 10px;
+    appearance: none; /* Remove default appearance */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+}
+
+.list-group li input[type="checkbox"]:checked {
+    background-color: #3498db;
+    border-color: #000;
+}
+
+.list-group li input[type="checkbox"]:after {
+    content: "\2713";
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.list-group li input[type="checkbox"]:checked:after {
+    display: block;
+}

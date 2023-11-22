@@ -1,0 +1,61 @@
+@extends('layouts.master') @section('css')
+<link rel="stylesheet" href="{{ asset('css/weather.css') }}" />
+@endsection @section('content')
+<main>
+    <p class="desc">
+        Sumber Diperoleh Secara Resmi dari
+        <a href="https://data.bmkg.go.id">BMKG</a>
+        Secara Real Time.
+        <span id="date"></span>
+        <span id="time"></span>
+    </p>
+
+    <section class="weather-section">
+        <h1>Weather ⛅️</h1>
+    </section>
+    <section class="earthquake-section">
+        <h1>Earthquake 🌎</h1>
+        <h4>Lastest Earthquake</h4>
+        <div class="table-responsive">
+            <table class="table table-responsive">
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Wilayah</th>
+                    <th>Jam</th>
+                    <th>Magnitude</th>
+                </tr>
+                <tr>
+                    <td>{{ $quakeData['tanggal'] }}</td>
+                    <td>{{ $quakeData['wilayah'] }}</td>
+                    <td>{{ $quakeData['jam'] }}</td>
+                    <td>{{ $quakeData['magnitude'] }}</td>
+                </tr>
+            </table>
+        </div>
+        <h4>Earthquake > 5 Mag</h4>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-responsive">
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Wilayah</th>
+                    <th>Jam</th>
+                    <th>Magnitude</th>
+                    <th>Potensi</th>
+                </tr>
+                @foreach($quakeBigData as $row)
+                <tr>
+                    <td>{{ $row['Tanggal'] }}</td>
+                    <td>{{ $row['Wilayah'] }}</td>
+                    <td>{{ $row['Jam'] }}</td>
+                    <td>{{ $row['Magnitude'] }}</td>
+                    <td>{{ $row['Potensi'] }}</td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
+    </section>
+</main>
+@endsection @section('script')
+<script src="{{ asset('js/weather.js') }}" defer></script>
+@endsection

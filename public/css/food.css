@@ -1,0 +1,62 @@
+@media screen and (min-height: 350px) {
+    .carousel-item {
+        max-height: 350px !important;
+    }
+}
+@media screen and (max-height: 600px) {
+    .carousel-item {
+        max-height: 400px !important;
+    }
+}
+
+.search-input {
+    border-radius: 3px;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 40px;
+}
+
+.label {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.card-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-text {
+    font-style: oblique;
+}
+
+.c-item {
+    height: 480px;
+    border-radius: 20px;
+}
+
+.c-img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.btn-right {
+    text-align: center;
+}
+
+.card-text {
+    text-align: justify;
+}

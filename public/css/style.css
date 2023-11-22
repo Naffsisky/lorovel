@@ -1,0 +1,130 @@
+.content {
+    min-height: calc(100vh - 170px)
+}
+
+.headline {
+    font-family: sans-serif;
+}
+
+.tengah {
+    text-align: center;
+}
+
+.kiri {
+    text-align: left;
+}
+
+.kanan {
+    text-align: right;
+}
+
+.kanan h4 {
+    text-align: center
+}
+
+.kanan .news {
+    text-align: justify;
+    text-align-last: left;
+    margin-left: 30%;
+    margin-bottom: 0px;
+}
+
+.kanan li {
+    text-align: left;
+    margin-left: 50%
+}
+
+.kanan li a{
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-height: 50px;
+    margin-right: 0;
+}
+
+.col-lg-6 {
+    width: 100%;
+}
+
+.notes {
+    max-width: 100%;
+    text-align: left;
+}
+
+.notes-head {
+    margin-bottom: 0px;
+    font-size: 22px;
+}
+
+.times {
+    text-align: left;
+    margin-left: 50%;
+    margin-bottom: 0px;
+}
+
+.hr {
+    max-width: 80%;
+}
+
+.hr-full {
+    border: 1px solid black;
+    opacity: 50;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+
+.list-group li {
+    margin-top: 10px
+}
+
+@media (max-width: 768px){
+    .kiri {
+        text-align: center;
+        margin: 20px;
+    }
+    .kanan {
+        text-align: center;
+        margin: 20px;
+    }
+    .kanan li {
+        text-align: left;
+        margin-left: 0;
+        text-decoration: none;
+    }
+    .kanan .news {
+        text-align: left;
+    }
+    .times {
+        text-align: left;
+        margin-left: 0;
+        margin-bottom: 0px;
+    }
+    hr {
+        max-width: 100%
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        width: 100%;
+        display: flex;
+        justify-content: right;
+    }
+
+    .navbar-nav .nav-item {
+        text-align: right;
+    }
+}

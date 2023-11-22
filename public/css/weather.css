@@ -1,0 +1,51 @@
+/* CSS */
+
+@keyframes fadeInOut {
+    0% { opacity: 1; } /* Mulai dengan keadaan tersembunyi */
+    50% { opacity: 1; } /* Muncul */
+    100% { opacity: 0; } /* Menghilang */
+}
+
+.blinking-text-important {
+    animation: fadeInOut 1s linear infinite;
+    color: red;
+}
+
+
+.desc {
+    margin: 20px;
+    text-align: center;
+}
+
+/* weather*/
+.weather-section {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.weather-section h1 {
+    text-align: center;
+}
+
+
+/* earthquake*/
+.earthquake-section {
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.earthquake-section h1 {
+    text-align: center;
+}
+
+.earthquake-section h4 {
+    margin-top: 30px;
+}
+
+.earthquake-section table tr {
+    text-align: center;
+}

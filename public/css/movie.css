@@ -1,0 +1,125 @@
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 20px;
+    padding: 10px 10px 20px 10px;
+    text-align: center;
+}
+
+.card-desc {
+    background-color: white;
+}
+
+.card-desc .card-text {
+    font-style: italic;
+}
+
+.card-body {
+    min-height: 100px;
+    background-color: #212529;
+    color: white
+}
+
+/* .search {
+    margin: 20px;
+}
+
+.search-input {
+    border-radius: 3px;
+}
+
+.label {
+    margin-bottom: 20px;
+    font-size: 20px;
+} */
+
+.search-container {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-form {
+    text-align: center;
+}
+
+.label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.button-group {
+    margin-left: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.sub-heading {
+    text-align: right;
+    text-decoration: none;
+    color: black;
+}
+
+.sub-heading ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+.sub-heading ul li a {
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 7px;
+    color: black;
+}
+
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffe505;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px){
+    .row {
+        margin: 20px;
+    }
+}
