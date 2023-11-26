@@ -3,12 +3,11 @@
 GET http://35.219.123.247/db
 
 ###
-
 POST http://35.219.123.247/db
 Content-Type: application/json
 
 {
-    "text": "test3",
+    "text": "testing",
     "done": false
 }
 

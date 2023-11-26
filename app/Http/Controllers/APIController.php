@@ -35,13 +35,13 @@ class APIController extends Controller
     }
 
     public function getNews(){
-        // $urlNews = "http://newsapi.org/v2/everything?q=keyword&apiKey=d14ab2781b58448f8a30e28701cf7598";
-        $urlNews = "http://35.219.123.247/";
+        $urlNews = "http://newsapi.org/v2/everything?q=keyword&apiKey=d14ab2781b58448f8a30e28701cf7598";
+        // $urlNews = "http://35.219.123.247/";
         $serverResponse = Http::get($urlNews);
     
         if ($serverResponse->successful()){
-            // $newsData = $serverResponse->json()['articles'];
-            $newsData = $serverResponse->json()['endpoint'];
+            $newsData = $serverResponse->json()['articles'];
+            // $newsData = $serverResponse->json()['endpoint'];
             $limitedNews = array_slice($newsData, 0, 5);
             // dd($limitedNews);
             return $limitedNews;

@@ -59,17 +59,16 @@
                 <p id="time" class="times"></p>
                 <p id="date" class="times"></p>
                 <br />
-
-                <!-- @if(isset($newsData))
-                  @foreach($newsData as $news) -->
-                      <p class="news"><b>{{ $newsData['quake'] }}</b></p>
-                      <p class="news">{{ $newsData['weather']['province']['example'] }}</p>
+              @if(isset($newsData))
+                  @foreach($newsData as $news)
+                    <p class="news"><b>{{ $news['title'] }}</b></p>
+                    <p class="news">{{ $news['description'] }}</p>
+                    <p class="news"><a class="readmore-news" href="{{ $news['url'] }}"> Read more </a></p>
                       <br/>
-                  <!-- @endforeach
+                  @endforeach
               @else
                   <p>No news available</p>
-              @endif -->
-
+              @endif
             </div>
         </div>
     </div>
