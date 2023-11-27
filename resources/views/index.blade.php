@@ -63,7 +63,7 @@
                   @foreach($newsData as $news)
                     <p class="news"><b>{{ $news['title'] }}</b></p>
                     <p class="news">{{ $news['description'] }}</p>
-                    <p class="news"><a class="readmore-news" href="{{ $news['url'] }}"> Read more </a></p>
+                    <p class="news"><a class="readmore-news" href="{{ $news['url'] }}" target="_blank"> Read more </a></p>
                       <br/>
                   @endforeach
               @else

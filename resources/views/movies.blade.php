@@ -4,12 +4,12 @@
 <main>
 <div class="search-container">
     <form action="{{ url('/movies') }}" method="GET" class="search-form">
-        <label for="search" class="label">Search your favorite movie or TV show 📺</label>
+        <label for="search" class="label">Search Your Favorite Movie or TV Show 📺</label>
         <div class="input-group">
             <input
                 type="text"
                 name="search"
-                class="search-input"
+                class="search-input animated-border"
                 placeholder="Enter keywords..."
             />
             <div class="button-group">
