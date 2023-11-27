@@ -14,10 +14,31 @@
         <h1>Weather ⛅️</h1>
         <p>Province: {{ $getWeather['domain'] }}</p>
         <p>City: {{ $getWeather['description'] }}</p>
-
-        @foreach($getWeather['params'][6]['times'] as $cuaca)
-        <p>Cuaca: {{ $cuaca['name'] }}</p>
-        @endforeach
+        <div class="table-responsive">
+            <table class="table table-responsive">
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Cuaca</th>
+                    <th>Jam</th>
+                    <th>Celcius</th>
+                    <th>Farenheit</th>
+                </tr>
+                @foreach($getWeather['params'][6]['times'] as $index => $cuaca)
+                    @if(isset($getWeather['params'][5]['times'][$index]))
+                        @php
+                            $suhu = $getWeather['params'][5]['times'][$index];
+                        @endphp
+                            <tr>
+                                <td>{{ \Carbon\Carbon::createFromFormat('YmdHi', $cuaca['datetime'])->format('d F Y') }}</td>
+                                <td>{{ $cuaca['name'] }}</td>
+                                <td>{{ \Carbon\Carbon::createFromFormat('YmdHi', $cuaca['datetime'])->format('H:i:s') }}</td>
+                                <td>{{ $suhu['celcius'] }}</td>
+                                <td>{{ $suhu['fahrenheit'] }}</td>
+                            </tr>
+                        @endif
+                    @endforeach
+            </table>
+        </div>
     </section>
     <section class="earthquake-section">
         <h1>Earthquake 🌎</h1>

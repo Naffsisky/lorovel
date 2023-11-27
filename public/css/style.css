@@ -114,10 +114,26 @@ footer {
     .times {
         text-align: left;
         margin-left: 0;
-        margin-bottom: 0px;
+        margin-bottom: 0;
+    }
+    #time {
+        margin-top: 20px;
     }
     hr {
-        max-width: 100%
+        max-width: 100%;
+    }
+    .hr {
+        max-width: 100%;
+    }
+    h4 {
+        margin-top: 20px;
+    }
+    .news p{
+        text-align: justify;
+    }
+
+    .kanan .news {
+        margin-left: 0;
     }
 }
 

@@ -8,4 +8,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        proxy: {
+            '/': 'http://localhost:8000', // Sesuaikan dengan URL server Laravel Anda
+        },
+    },
 });

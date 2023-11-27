@@ -1,78 +1,96 @@
-@extends('layouts.master')
+@extends('layouts.master') @section('css')
+<link rel="stylesheet" href="{{ asset('css/weather.css') }}" />
+@endsection @section('content')
+<main>
+    <p class="desc">
+        Sumber Diperoleh Secara Resmi dari
+        <a href="https://data.bmkg.go.id">BMKG</a>
+        Secara Real Time.
+        <span id="date"></span>
+        <span id="time"></span>
+    </p>
 
-@section('css')
-<link rel="stylesheet" href="{{ asset('css/todolist.css') }}" />
-@endsection
-
-@section('content')
-<main class="container mt-4">
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="section kiri">
-                <h2 class="headline">NOTES 🗒️</h2>
-                <div class="notes">
-                    <hr class="hr" />
-                    @if(isset($notesData)) @foreach($notesData as $note)
-                    <p class="notes-head"><b>Title</b></p>
-                    <p>{{ $note['title'] }}</p>
-                    <p class="notes-head"><b>Tags</b></p>
-                    <p>{{ $note['tags'] }}</p>
-                    <p class="notes-head"><b>Body</b></p>
-                    <p>{{ $note['body'] }}</p>
-                    <hr class="hr"/>
-                    @endforeach @else
-                    <p>No notes available</p>
-                    @endif
-                </div>
-            </div>
+    <section class="weather-section">
+        <h1>Weather ⛅️</h1>
+        <p>Province: {{ $getWeather['domain'] }}</p>
+        <p>City: {{ $getWeather['description'] }}</p>
+        <div class="table-responsive">
+            <table class="table table-responsive">
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Cuaca</th>
+                    <th>Jam</th>
+                    <th>Celcius</th>
+                    <th>Farenheit</th>
+                </tr>
+                @foreach($getWeather['params'][6]['times'] as $index => $cuaca)
+                @if(isset($getWeather['params'][5]['times'][$index])) @php $suhu
+                = $getWeather['params'][5]['times'][$index]; @endphp
+                <tr>
+                    <td>
+                        {{ \Carbon\Carbon::createFromFormat('YmdHi',
+                        $cuaca['datetime'])->format('d F Y') }}
+                    </td>
+                    <td>{{ $cuaca['name'] }}</td>
+                    <td>
+                        {{ \Carbon\Carbon::createFromFormat('YmdHi',
+                        $cuaca['datetime'])->format('H:i:s') }}
+                    </td>
+                    <td>{{ $suhu['celcius'] }}</td>
+                    <td>{{ $suhu['fahrenheit'] }}</td>
+                </tr>
+                @endif @endforeach
+            </table>
         </div>
-        <div class="col-lg-4">
-            <div class="section tengah">
-                <h2 class="headline">What are you list today?</h2>
-                <div class="row justify-content-center">
-                    <div class="col col-lg-6">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <textarea
-                                    id="inputTodo"
-                                    type="text"
-                                    class="form-control mb-2"
-                                ></textarea>
-                                <button
-                                    id="addTodo"
-                                    class="btn btn-dark float-end"
-                                >
-                                    Tambah
-                                </button>
-                            </div>
-                        </div>
-                        <hr class="hr-full"/>
-                        <h4>My Agenda 📝</h4>
-                        <ul id="todoList" class="list-group"></ul>
-                    </div>
-                </div>
-            </div>
+    </section>
+    <section class="earthquake-section">
+        <h1>Earthquake 🌎</h1>
+        <h4 class="blinking-text-important">Lastest Earthquake</h4>
+        <img
+            src="{{ $getQuakeData['shakemap'] }}"
+            alt="Earthquake Image"
+            style="max-width: 100%"
+        />
+        <div class="table-responsive">
+            <table class="table table-responsive">
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Wilayah</th>
+                    <th>Jam</th>
+                    <th>Magnitude</th>
+                </tr>
+                <tr>
+                    <td>{{ $getQuakeData['tanggal'] }}</td>
+                    <td>{{ $getQuakeData['wilayah'] }}</td>
+                    <td>{{ $getQuakeData['jam'] }}</td>
+                    <td>{{ $getQuakeData['magnitude'] }}</td>
+                </tr>
+            </table>
         </div>
-        <div class="col-lg-4">
-            <div class="section kanan">
-                <h2 class="headline">HOT NEWS 🔥</h2>
-                <p id="time" class="times"></p>
-                <p id="date" class="times"></p>
-                <br />
-              @if(isset($newsData))
-                  @foreach($newsData as $news)
-                    <p class="news"><b>{{ $news['title'] }}</b></p>
-                    <p class="news">{{ $news['description'] }}</p>
-                    <p class="news"><a class="readmore-news" href="{{ $news['url'] }}" target="_blank"> Read more </a></p>
-                      <br/>
-                  @endforeach
-              @else
-                  <p>No news available</p>
-              @endif
-            </div>
+        <h4 class="blinking-text-important">Earthquake > 5 Mag</h4>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-responsive">
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Wilayah</th>
+                    <th>Jam</th>
+                    <th>Magnitude</th>
+                    <th>Potensi</th>
+                </tr>
+                @foreach($quakeBigData as $row)
+                <tr>
+                    <td>{{ $row['Tanggal'] }}</td>
+                    <td>{{ $row['Wilayah'] }}</td>
+                    <td>{{ $row['Jam'] }}</td>
+                    <td>{{ $row['Magnitude'] }}</td>
+                    <td>{{ $row['Potensi'] }}</td>
+                </tr>
+                @endforeach
+            </table>
         </div>
-    </div>
+    </section>
 </main>
 @endsection @section('script')
-<script src="{{ asset('js/home.js') }}"></script>
+<script src="{{ asset('js/weather.js') }}" defer></script>
 @endsection

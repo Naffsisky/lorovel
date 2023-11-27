@@ -162,4 +162,8 @@ p {
     .row {
         margin: 20px;
     }
+    .sub-heading ul li {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
 }
