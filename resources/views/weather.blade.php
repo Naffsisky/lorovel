@@ -112,5 +112,5 @@
     </section>
 </main>
 @endsection @section('script')
-<script src="{{ asset('js/weather.js') }}" defer></script>
+<script src="{{ asset('js/weather.js') }}"></script>
 @endsection
