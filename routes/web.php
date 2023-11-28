@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APIController;
 use App\Http\Controllers\BMKGController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\NotesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,11 @@ Route::get('/movies', [MovieController::class, 'getMovieData'])->name('movies');
 
 Route::get('/foods', [APIController::class, 'getFoods'])->name('foods');
 
-Route::get('/notes', function () {
-    return view('notes');
-})->name('notes');
+Route::get('/notes', [NotesController::class, 'getIndexData'])->name('notes');
+
+Route::get('/notes/{id}/edit', [NotesController::class, 'editNote'])->name('notes.edit');
+
+Route::put('/notes/{id}', [NotesController::class, 'updateNote'])->name('notes.update');
+
+Route::delete('/notes/{id}', [NotesController::class, 'deleteNote'])->name('notes.destroy');
+

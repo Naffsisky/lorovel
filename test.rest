@@ -15,7 +15,17 @@ Content-Type: application/json
 GET http://35.219.123.247/app2
 
 ### Notes
-DELETE http://35.219.123.247/app2/6bxItl7vx4R7ZVFL
+DELETE http://35.219.123.247/app2/JAVkuTfbb-l1NsTO
+
+### Notes Post
+POST http://35.219.123.247/app2
+Content-Type: application/json
+
+{
+    "title" : "Buat Note 10",
+    "tags" : "Testing",
+    "body" : "Halo, testing POST note"
+}
 
 ### --- BMKG ---
 GET http://35.219.123.247/

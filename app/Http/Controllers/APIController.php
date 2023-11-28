@@ -22,11 +22,12 @@ class APIController extends Controller
         if ($serverResponse->successful()) {
             $notesData = $serverResponse->json()['data']['notes'];
 
-            $limitedNotes = array_slice($notesData, 0, 10);
-
-            usort($limitedNotes, function ($a, $b) {
+            usort($notesData, function ($a, $b) {
                 return strtotime($b['createdAt']) - strtotime($a['createdAt']);
             });
+
+            $limitedNotes = array_slice($notesData, 0, 5);
+
             
             return $limitedNotes;
         } else {

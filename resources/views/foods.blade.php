@@ -57,7 +57,7 @@
     <h2>Search Results 🍔</h2>
     <div class="row">
         @foreach($searchResults as $result)
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4" style="padding: 20px;">
             <div class="card">
                 <img
                     src="{{ $result['strMealThumb'] }}"

@@ -1,0 +1,36 @@
+.section {
+    width: 30%;
+    float: left;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-left: 20px;
+}
+
+.section h4 {
+    text-align: center;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.section p {
+    text-align: justify;
+}
+
+/* Bersihkan float */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+}
+
+.button {
+    text-align: right;
+}
