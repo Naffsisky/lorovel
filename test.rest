@@ -24,7 +24,7 @@ GET http://35.219.123.247/
 GET http://35.219.123.247/quake
 
 ### Weather
-GET http://35.219.123.247/weather/banten/serang
+GET http://35.219.123.247/weather/Jawa-Barat
 
 ### Geolocation
 GET http://api.ipstack.com/172.225.72.78?access_key=15c5d0ba5a62d20842aa1b1ee5a3b4ea

@@ -1,9 +1,38 @@
 /* CSS */
 
 @keyframes fadeInOut {
-    0% { opacity: 1; } /* Mulai dengan keadaan tersembunyi */
-    50% { opacity: 1; } /* Muncul */
-    100% { opacity: 0; } /* Menghilang */
+    0% {
+        opacity: 1; 
+    }
+    50% { 
+        opacity: 1; 
+    }
+    100% { 
+        opacity: 0; 
+    }
+}
+
+@keyframes text {
+    0% {
+        opacity: 1; 
+        color: red;
+    }
+    25% {
+        opacity: 1; 
+        color: yellow;
+    }
+    50% { 
+        opacity: 1; 
+        color: blue;
+    }
+    75% {
+        opacity: 1; 
+        color: green;
+    }
+    100% { 
+        opacity: 0; 
+        color: purple;
+    }
 }
 
 .blinking-text-important {
@@ -11,10 +40,17 @@
     color: red;
 }
 
+.blinking-text-dugem {
+    animation: text 1s linear infinite;
+}
 
 .desc {
     margin: 20px;
     text-align: center;
+}
+
+select {
+    border: 2px solid black;
 }
 
 /* weather*/
@@ -26,6 +62,28 @@
 }
 
 .weather-section h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+form input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    margin-top: 20px;
+}
+
+.city {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.table-cuaca {
     text-align: center;
 }
 
@@ -48,4 +106,12 @@
 
 .earthquake-section table tr {
     text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .weather-section,
+    .earthquake-section {
+        float: none;
+        width: 100%; 
+    }
 }

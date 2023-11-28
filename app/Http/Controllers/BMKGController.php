@@ -7,13 +7,17 @@ use Illuminate\Support\Facades\Http;
 
 class BMKGController extends Controller
 {
-    public function getIndexBMKG(Request $request) {
+    public function getIndexBMKG(Request $request , $province = 'jawa-timur', $city = 'surabaya') {
 
+        $province = $request->input('province', 'jawa-timur');
+        $city = $request->input('city', 'surabaya');
+
+        $getLocation = $this->getLocation( $province, $city);
         $getWeather = $this->getWeather();
         $getQuakeData = $this->getQuakeData();
         $quakeBigData = $this->quakeBigData();
         
-        return view('weather', compact('getWeather', 'getQuakeData', 'quakeBigData'));
+        return view('weather', compact('getWeather', 'getQuakeData', 'quakeBigData', 'getLocation'));
     }
 
     public function getQuakeData()
@@ -43,6 +47,19 @@ class BMKGController extends Controller
         }
     }
 
+    public function getLocation($province, $city){
+
+        $urlWeather = "http://35.219.123.247/weather/$province/$city";
+        $weatherResponse = Http::get($urlWeather);
+
+        if ($weatherResponse->successful()) {
+            $getLocation = $weatherResponse->json()["data"];
+            
+            return $getLocation;
+        } else {
+            return "Failed to fetch weather data from API";
+        }
+    }
     public function getWeather(){
 
         $urlWeather = "http://35.219.123.247/weather/banten/serang";

@@ -33,6 +33,10 @@ form {
     font-size: 18px;
 }
 
+.card {
+    border: 2px solid black;
+}
+
 .card-title {
     text-align: center;
     font-weight: bold;
@@ -40,6 +44,7 @@ form {
 
 .card-text {
     font-style: oblique;
+    text-align: justify;
 }
 
 .c-item {
@@ -55,8 +60,4 @@ form {
 
 .btn-right {
     text-align: center;
-}
-
-.card-text {
-    text-align: justify;
 }

@@ -69,7 +69,7 @@
                     <p class="card-text">
                         {{
                         \Illuminate\Support\Str::limit($result['strInstructions'],
-                        200, $end='...') }}
+                        180, $end='...') }}
                     </p>
                     <div class="btn-right">
                         <a
