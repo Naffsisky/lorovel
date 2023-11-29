@@ -29,7 +29,6 @@ class BMKGController extends Controller
             $quakeData = $quakeResponse->json()["data"];
             return $quakeData;
         } else {
-            // Handle kesalahan saat mengambil data dari API quake
             return "Failed to fetch quake data from API";
         }
     }

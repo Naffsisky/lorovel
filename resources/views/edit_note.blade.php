@@ -1,4 +1,3 @@
-<!-- resources/views/edit_note.blade.php -->
 @extends('layouts.master') @section('css')
 <link rel="stylesheet" href="{{ asset('css/notes.css') }}" />
 <style>

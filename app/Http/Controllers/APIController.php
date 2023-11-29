@@ -11,8 +11,6 @@ class APIController extends Controller
         $notesData = $this->getNotes();
         $newsData = $this->getNews();
 
-        // Lakukan operasi lain jika diperlukan
-
         return view('index', compact('notesData', 'newsData'));
     }
     public function getNotes(){
@@ -36,7 +34,9 @@ class APIController extends Controller
     }
 
     public function getNews(){
-        $urlNews = "http://newsapi.org/v2/everything?q=keyword&apiKey=d14ab2781b58448f8a30e28701cf7598";
+        $apiKey = env('NEWS_API_KEY');
+
+        $urlNews = "http://newsapi.org/v2/everything?q=keyword&apiKey=" . $apiKey;
         // $urlNews = "http://35.219.123.247/";
         $serverResponse = Http::get($urlNews);
     

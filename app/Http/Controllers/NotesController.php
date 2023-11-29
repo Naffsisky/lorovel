@@ -26,8 +26,6 @@ class NotesController extends Controller
         }
     }
 
-    // Add these methods to NotesController
-
     public function createNoteForm() {
         return view('create_note');
     }
