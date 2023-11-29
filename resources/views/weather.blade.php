@@ -22,7 +22,6 @@
             <br />
             <button type="submit" class="btn btn-dark">Search</button>
         </form>
-
         @if(isset($getLocation['description']) && isset($getLocation['domain']))
         <h5 class="city">
             Prediksi Cuaca :

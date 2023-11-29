@@ -38,7 +38,7 @@ setInterval(updateTime, 1000);
 
 document.addEventListener("DOMContentLoaded", function () {
     var provincesAndCities = {
-        Aceh: [
+        "Aceh": [
             "Aceh-Barat",
             "Aceh-Barat-Daya",
             "Aceh-Besar",
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Pelabuhan-Belinyu",
         ],
 
-        Banten: [
+        "Banten": [
             "Anyer",
             "Bayah",
             "Binuangen",
@@ -139,6 +139,47 @@ document.addEventListener("DOMContentLoaded", function () {
             "Sumber",
             "Sumedang",
             "Tasikmalaya",
+        ],
+
+        "Jawa-Timur" : [
+            "Bangkalan",
+            "Banyuwangi",
+            "Batu",
+            "Bojonegoro",
+            "Bondowoso",
+            "Gresik",
+            "Jember",
+            "Jombang",
+            "Kabupaten-Blitar",
+            "Kabupaten-Kediri",
+            "Kabupaten-Madiun",
+            "Kabupaten-Malang",
+            "Kabupaten-Mojokerto",
+            "Kabupaten-Pasuruan",
+            "Kabupaten-Probolinggo",
+            "Kota-Blitar",
+            "Kota-Kediri",
+            "Kota-Madiun",
+            "Kota-Malang",
+            "Kota-Mojokerto",
+            "Kota-Pasuruan",
+            "Kota-Probolinggo",
+            "Lamongan",
+            "Lumajang",
+            "Magetan",
+            "Nganjuk",
+            "Ngawi",
+            "Pacitan",
+            "Pamekasan",
+            "Ponorogo",
+            "Sampang",
+            "Sidoarjo",
+            "Situbondo",
+            "Sumenep",
+            "Surabaya",
+            "Trenggalek",
+            "Tuban",
+            "Tulungagung",
         ],
     };
 

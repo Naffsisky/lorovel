@@ -33,7 +33,8 @@
                     <input type="text" class="form-control" name="tags" required />
                 </div>
                 <div style="text-align: right">
-                    <button type="submit" class="btn btn-primary">Create Note</button>
+                    <a href="{{ route('notes') }}" class="btn btn-danger">Back</a>
+                    <button type="submit" class="btn btn-primary">Create</button>
                 </div>
             </form>
     </main>

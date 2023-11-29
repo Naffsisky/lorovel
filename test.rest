@@ -1,0 +1,63 @@
+
+### --- Todo List ---
+GET http://35.219.123.247/db
+
+###
+POST http://35.219.123.247/db
+Content-Type: application/json
+
+{
+    "text": "testing",
+    "done": false
+}
+
+### --- Notes ---
+GET http://35.219.123.247/app2
+
+### Notes
+DELETE http://35.219.123.247/app2/JAVkuTfbb-l1NsTO
+
+### Notes Post
+POST http://35.219.123.247/app2
+Content-Type: application/json
+
+{
+    "title" : "Buat Note 10",
+    "tags" : "Testing",
+    "body" : "Halo, testing POST note"
+}
+
+### --- BMKG ---
+GET http://35.219.123.247/
+
+### Quake
+GET http://35.219.123.247/quake
+
+### Weather
+GET http://35.219.123.247/weather/Jawa-Timur
+
+### Geolocation
+GET http://api.ipstack.com/172.225.72.78?access_key=15c5d0ba5a62d20842aa1b1ee5a3b4ea
+
+### --- News ---
+GET https://newsapi.org/v2/everything?q=keyword&apiKey=d14ab2781b58448f8a30e28701cf7598
+
+### --- Foods ---
+GET http://themealdb.com/api/json/v1/1/random.php
+
+### Foods Search
+
+GET https://www.themealdb.com/api/json/v1/1/search.php?s=lamb
+
+### --- Movies ---
+GET https://api.themoviedb.org/3/movie/157336?api_key=23a5de85ec98eeacf1d868b799bb812c&append_to_response=videos,images
+
+### Movies Popular
+GET https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyM2E1ZGU4NWVjOThlZWFjZjFkODY4Yjc5OWJiODEyYyIsInN1YiI6IjY1NWNmNmRkMDgxNmM3MDBmZDMzZDE0NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Tir2HVRaAema28B9Bpl1NUneeWxMRkgKspT4W7k9Tq8
+Accept: application/json
+
+### Movies Top Rated
+GET https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=vote_average.desc&without_genres=99,10755&vote_count.gte=200
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyM2E1ZGU4NWVjOThlZWFjZjFkODY4Yjc5OWJiODEyYyIsInN1YiI6IjY1NWNmNmRkMDgxNmM3MDBmZDMzZDE0NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Tir2HVRaAema28B9Bpl1NUneeWxMRkgKspT4W7k9Tq8
+Accept: application/json

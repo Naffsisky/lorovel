@@ -19,7 +19,6 @@
     text-align: justify;
 }
 
-/* Bersihkan float */
 .clearfix::after {
     content: "";
     clear: both;
@@ -38,4 +37,12 @@ h1 {
 .create-note-button {
     text-align: center;
     margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        width: 100%;
+        float: none;
+        margin-left: 0;
+    }
 }

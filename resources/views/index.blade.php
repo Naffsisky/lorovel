@@ -49,6 +49,8 @@
                         <hr class="hr-full"/>
                         <h4>My Agenda 📝</h4>
                         <ul id="todoList" class="list-group"></ul>
+                        <br/>
+                        <hr class="hr-full"/>
                     </div>
                 </div>
             </div>

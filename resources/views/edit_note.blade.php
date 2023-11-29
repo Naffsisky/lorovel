@@ -47,7 +47,8 @@
             />
         </div>
         <div style="text-align: right">
-            <button type="submit" class="btn btn-primary">Update Note</button>
+            <a href="{{ route('notes') }}" class="btn btn-danger">Back</a>
+            <button type="submit" class="btn btn-primary">Update</button>
         </div>
     </form>
 </main>
