@@ -2,7 +2,12 @@
 <link rel="stylesheet" href="{{ asset('css/notes.css') }}" />
 @endsection @section('content')
 <main>
-    <h1>Notes</h1>
+    <h1>~ My Notes ~</h1>
+    <div class="create-note-button">
+        <a href="{{ route('notes.create') }}" class="btn btn-success"
+            >Create Note</a
+        >
+    </div>
     <div class="notes-content">
         @if(isset($notesData)) @foreach($notesData as $note)
         <div class="section">
@@ -14,6 +19,7 @@
                 <form
                     method="POST"
                     action="{{ route('notes.destroy', $note['id']) }}"
+                    onsubmit="return confirm('Apakah anda yakin ingin menghapus note ini?');"
                 >
                     @csrf @method('DELETE')
                     <button type="submit" class="btn btn-danger">Hapus</button>

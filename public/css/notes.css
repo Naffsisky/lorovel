@@ -34,3 +34,8 @@ h1 {
 .button {
     text-align: right;
 }
+
+.create-note-button {
+    text-align: center;
+    margin: 20px;
+}

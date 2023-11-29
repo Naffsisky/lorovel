@@ -26,6 +26,35 @@ class NotesController extends Controller
         }
     }
 
+    // Add these methods to NotesController
+
+    public function createNoteForm() {
+        return view('create_note');
+    }
+
+    public function createNote(Request $request) {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'body' => 'required|string',
+            'tags' => 'required|string',
+        ]);
+
+        $newNote = [
+            'title' => $request->input('title'),
+            'body' => $request->input('body'),
+            'tags' => $request->input('tags'),
+        ];
+
+        $urlCreateNote = "http://35.219.123.247/app2";
+        $serverResponse = Http::post($urlCreateNote, $newNote);
+
+        if ($serverResponse->successful()) {
+            return redirect()->route('notes')->with('success', 'Note created successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Failed to create note. Please try again.');
+        }
+    }
+
     public function editNote($id) {
         $note = $this->getNoteById($id);
     
@@ -78,5 +107,4 @@ class NotesController extends Controller
             return redirect()->back()->with('error', 'Failed to delete note. Please try again.');
         }
     }
-    
 }

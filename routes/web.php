@@ -37,3 +37,6 @@ Route::put('/notes/{id}', [NotesController::class, 'updateNote'])->name('notes.u
 
 Route::delete('/notes/{id}', [NotesController::class, 'deleteNote'])->name('notes.destroy');
 
+Route::get('/notes/create', [NotesController::class, 'createNoteForm'])->name('notes.create');
+
+Route::post('/notes', [NotesController::class, 'createNote'])->name('notes.store');
